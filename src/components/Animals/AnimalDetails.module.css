@@ -1,0 +1,503 @@
+.container {
+  animation: fadeIn 0.5s ease-out;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+}
+
+.backButton:hover {
+  transform: translateX(-5px);
+}
+
+.heroSection {
+  margin-bottom: 3rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.heroImageContainer {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.heroImage:hover {
+  transform: scale(1.05);
+}
+
+.heroOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4), transparent);
+  color: white;
+}
+
+.heroName {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.heroSpecies {
+  font-size: 1.8rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  font-style: italic;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+.mainInfo {
+  background-color: var(--card-light);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+:global(.dark-mode) .mainInfo {
+  background-color: var(--card-dark);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.badge {
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.badge.healthy {
+  background-color: var(--success-color);
+}
+
+.badge.recovering {
+  background-color: var(--warning-color);
+}
+
+.badge.vulnerable {
+  background-color: #ff8f00;
+}
+
+.badge.endangered {
+  background-color: var(--error-color);
+}
+
+.badge.critically-endangered {
+  background-color: #b71c1c;
+}
+
+/* Fixed: Changed from .badge['least-concern'] to .badge.least-concern */
+.badge.least-concern {
+  background-color: var(--success-color);
+}
+
+/* Fixed: Changed from .badge['near-threatened'] to .badge.near-threatened */
+.badge.near-threatened {
+  background-color: #ffb300;
+}
+
+.badge.category {
+  background-color: var(--primary-color);
+}
+
+.description h2,
+.funFact h3,
+.quickFacts h3,
+.additionalInfo h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.description p {
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+:global(.dark-mode) .description p {
+  color: var(--text-dark);
+}
+
+.funFact {
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2.5rem;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.funFact h3 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.funFact p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.quickFacts {
+  margin-bottom: 2.5rem;
+}
+
+.factsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.factItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+:global(.dark-mode) .factItem {
+  background-color: var(--background-dark);
+}
+
+.factItem:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow);
+}
+
+.factIcon {
+  font-size: 2.2rem;
+}
+
+.factLabel {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  opacity: 0.7;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+:global(.dark-mode) .factLabel {
+  color: var(--text-dark);
+}
+
+.factValue {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.additionalInfo {
+  background-color: var(--background-light);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+:global(.dark-mode) .additionalInfo {
+  background-color: var(--background-dark);
+}
+
+.conservationInfo {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+:global(.dark-mode) .conservationInfo {
+  color: var(--text-dark);
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-right: 8px;
+  color: white;
+}
+
+.statusBadge.vulnerable {
+  background-color: #ff8f00;
+}
+
+.statusBadge.endangered {
+  background-color: var(--error-color);
+}
+
+.statusBadge.critically-endangered {
+  background-color: #b71c1c;
+}
+
+/* Fixed: Changed from .statusBadge['least-concern'] to .statusBadge.least-concern */
+.statusBadge.least-concern {
+  background-color: var(--success-color);
+}
+
+/* Fixed: Changed from .statusBadge['near-threatened'] to .statusBadge.near-threatened */
+.statusBadge.near-threatened {
+  background-color: #ffb300;
+}
+
+.sideInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.visitCard,
+.shareCard {
+  background-color: var(--card-light);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+:global(.dark-mode) .visitCard,
+:global(.dark-mode) .shareCard {
+  background-color: var(--card-dark);
+}
+
+.visitCard h3,
+.shareCard h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.visitCard p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+:global(.dark-mode) .visitCard p {
+  color: var(--text-dark);
+}
+
+.visitInfo {
+  margin: 1.8rem 0;
+  background-color: var(--background-light);
+  padding: 1.2rem;
+  border-radius: var(--border-radius);
+}
+
+:global(.dark-mode) .visitInfo {
+  background-color: var(--background-dark);
+}
+
+.visitInfo p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+:global(.dark-mode) .visitInfo p {
+  color: var(--text-dark);
+}
+
+.visitInfo p:last-child {
+  margin-bottom: 0;
+}
+
+.visitInfo span {
+  font-size: 1.3rem;
+}
+
+.shareButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.shareButton {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--background-light);
+  color: var(--text-light);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:global(.dark-mode) .shareButton {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.shareButton:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow);
+}
+
+.notFound {
+  text-align: center;
+  padding: 5rem;
+  background-color: var(--card-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+:global(.dark-mode) .notFound {
+  background-color: var(--card-dark);
+}
+
+.notFound h2 {
+  color: var(--error-color);
+  margin-bottom: 1.8rem;
+  font-size: 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroName {
+    font-size: 3rem;
+  }
+  
+  .heroSpecies {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .heroImageContainer {
+    height: 350px;
+  }
+
+  .heroName {
+    font-size: 2.5rem;
+  }
+
+  .heroSpecies {
+    font-size: 1.3rem;
+  }
+
+  .heroOverlay {
+    padding: 1.8rem;
+  }
+
+  .badges {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge {
+    width: fit-content;
+  }
+
+  .factsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .factItem {
+    padding: 1rem;
+  }
+
+  .shareButtons {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroImageContainer {
+    height: 280px;
+  }
+
+  .heroName {
+    font-size: 2rem;
+  }
+
+  .heroSpecies {
+    font-size: 1.1rem;
+  }
+
+  .mainInfo {
+    padding: 1.5rem;
+  }
+
+  .description h2,
+  .funFact h3,
+  .quickFacts h3,
+  .additionalInfo h3 {
+    font-size: 1.4rem;
+  }
+
+  .funFact p {
+    font-size: 1rem;
+  }
+}

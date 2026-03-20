@@ -1,0 +1,49 @@
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+}
+
+.errorContent {
+  text-align: center;
+  background-color: var(--card-light);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 500px;
+  animation: slideIn 0.5s ease-out;
+}
+
+:global(.dark-mode) .errorContent {
+  background-color: var(--card-dark);
+}
+
+.errorTitle {
+  font-size: 2rem;
+  color: var(--error-color);
+  margin-bottom: 1rem;
+}
+
+.errorMessage {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+:global(.dark-mode) .errorMessage {
+  color: var(--text-dark);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,130 @@
+.dashboard {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+:global(.dark-mode) .subtitle {
+  color: var(--text-dark);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.featuredSection {
+  background-color: var(--card-light);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+:global(.dark-mode) .featuredSection {
+  background-color: var(--card-dark);
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.featuredCard {
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+:global(.dark-mode) .featuredCard {
+  background-color: var(--background-dark);
+}
+
+.featuredCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow);
+}
+
+.featuredImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.featuredInfo {
+  padding: 1rem;
+}
+
+.featuredInfo h3 {
+  margin-bottom: 0.25rem;
+  color: var(--primary-color);
+}
+
+.featuredInfo p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+:global(.dark-mode) .featuredInfo p {
+  color: var(--text-dark);
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status.healthy {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.status.recovering {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

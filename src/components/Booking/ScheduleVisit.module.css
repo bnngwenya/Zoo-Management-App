@@ -1,0 +1,540 @@
+.container {
+  animation: fadeIn 0.5s ease-out;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+}
+
+.backButton:hover {
+  transform: translateX(-5px);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+:global(.dark-mode) .subtitle {
+  color: var(--text-dark);
+}
+
+.progressBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.progressBar::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--background-light);
+  z-index: 1;
+}
+
+:global(.dark-mode) .progressBar::before {
+  background-color: var(--background-dark);
+}
+
+.progressStep {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--background-light);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+:global(.dark-mode) .stepNumber {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.progressStep.active .stepNumber {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-light);
+}
+
+.stepLabel {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  opacity: 0.7;
+}
+
+:global(.dark-mode) .stepLabel {
+  color: var(--text-dark);
+}
+
+.progressStep.active .stepLabel {
+  opacity: 1;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.bookingCard {
+  background-color: var(--card-light);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+:global(.dark-mode) .bookingCard {
+  background-color: var(--card-dark);
+}
+
+.animalPreview {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--background-light);
+}
+
+:global(.dark-mode) .animalPreview {
+  border-bottom-color: var(--background-dark);
+}
+
+.previewImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+}
+
+.previewInfo h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.previewInfo p {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+}
+
+.status.healthy {
+  background-color: var(--success-color);
+}
+
+.status.recovering {
+  background-color: var(--warning-color);
+}
+
+.bookingForm {
+  margin-top: 1rem;
+}
+
+.formStep {
+  animation: slideIn 0.3s ease-out;
+}
+
+.stepTitle {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+:global(.dark-mode) .formGroup label {
+  color: var(--text-dark);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  background-color: var(--background-light);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+:global(.dark-mode) .formGroup input,
+:global(.dark-mode) .formGroup select,
+:global(.dark-mode) .formGroup textarea {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.timeSlots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.timeSlot {
+  padding: 10px;
+  border: 2px solid var(--background-light);
+  border-radius: var(--border-radius);
+  background: none;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+:global(.dark-mode) .timeSlot {
+  border-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.timeSlot:hover {
+  border-color: var(--primary-light);
+}
+
+.timeSlot.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.noSlots {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 1rem;
+  color: var(--error-color);
+  font-weight: 500;
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.reviewSection {
+  background-color: var(--background-light);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+
+:global(.dark-mode) .reviewSection {
+  background-color: var(--background-dark);
+}
+
+.reviewSection h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.reviewSection p {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+:global(.dark-mode) .reviewSection p {
+  color: var(--text-dark);
+}
+
+.reviewSection strong {
+  color: var(--secondary-color);
+  margin-right: 0.5rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.confirmationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.confirmationCard {
+  background-color: var(--card-light);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  max-width: 600px;
+  animation: slideUp 0.5s ease-out;
+}
+
+:global(.dark-mode) .confirmationCard {
+  background-color: var(--card-dark);
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--success-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 2rem;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.confirmationTitle {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.confirmationMessage {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+:global(.dark-mode) .confirmationMessage {
+  color: var(--text-dark);
+}
+
+.bookingDetails {
+  background-color: var(--background-light);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+:global(.dark-mode) .bookingDetails {
+  background-color: var(--background-dark);
+}
+
+.bookingDetails h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.bookingDetails p {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+:global(.dark-mode) .bookingDetails p {
+  color: var(--text-dark);
+}
+
+.confirmationActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.notFound {
+  text-align: center;
+  padding: 4rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .progressBar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .progressBar::before {
+    display: none;
+  }
+
+  .progressStep {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .confirmationActions {
+    flex-direction: column;
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.loadingText {
+  margin-top: 1rem;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.notFound {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--card-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 500px;
+  margin: 4rem auto;
+}
+
+:global(.dark-mode) .notFound {
+  background-color: var(--card-dark);
+}
+
+.notFoundIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.notFound h2 {
+  color: var(--error-color);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.notFound p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+:global(.dark-mode) .notFound p {
+  color: var(--text-dark);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

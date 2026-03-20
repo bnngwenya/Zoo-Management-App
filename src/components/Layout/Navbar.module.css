@@ -1,0 +1,158 @@
+.navbar {
+  background-color: var(--card-light);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+:global(.dark-mode) .navbar {
+  background-color: var(--card-dark);
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.logoIcon {
+  font-size: 2rem;
+}
+
+.logoText {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+:global(.dark-mode) .navLink {
+  color: var(--text-dark);
+}
+
+.navLink:hover {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.navLink.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.navIcon {
+  font-size: 1.2rem;
+}
+
+.navActions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition);
+  background-color: var(--background-light);
+}
+
+:global(.dark-mode) .themeToggle {
+  background-color: var(--background-dark);
+}
+
+.themeToggle:hover {
+  transform: scale(1.1);
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.menuToggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-light);
+  transition: var(--transition);
+  border-radius: 3px;
+}
+
+:global(.dark-mode) .menuToggle span {
+  background-color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--card-light);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+  }
+
+  :global(.dark-mode) .navLinks {
+    background-color: var(--card-dark);
+  }
+
+  .navLinks.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .logoText {
+    display: none;
+  }
+}
